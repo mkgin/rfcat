@@ -1,0 +1,17 @@
+os:
+    - linux
+
+sudo: required
+dist: bionic
+
+language: python
+
+python:
+    - "2.7"
+
+install:
+    - "travis_retry sudo apt-get update"
+    - "travis_retry sudo apt-get -qq install python-usb"
+    - pip install future
+
+script: python -m unittest discover
